@@ -1,7 +1,13 @@
+/* eslint-disable @next/next/link-passhref */
 import React from 'react'
 import Link from 'next/link'
+import styled from 'styled-components'
 import { useRouter } from 'next/router'
 import { signOut, useSession } from 'next-auth/client'
+
+const BlueLink = styled.a`
+  color: #003cff;
+`
 
 const Header: React.FC = () => {
   const router = useRouter()
@@ -13,9 +19,9 @@ const Header: React.FC = () => {
   let left = (
     <div className="left">
       <Link href="/">
-        <a className="bold" data-active={isActive('/')}>
+        <BlueLink className="bold" data-active={isActive('/')}>
           Feed
-        </a>
+        </BlueLink>
       </Link>
       <style jsx>{`
         .bold {
@@ -45,9 +51,9 @@ const Header: React.FC = () => {
     left = (
       <div className="left">
         <Link href="/">
-          <a className="bold" data-active={isActive('/')}>
+          <BlueLink className="bold" data-active={isActive('/')}>
             Feed
-          </a>
+          </BlueLink>
         </Link>
         <style jsx>{`
           .bold {
